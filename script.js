@@ -1,7 +1,8 @@
 /**
  * ============================================================================
- * ELENA VOSS // PORTFOLIO EXPERIMENTAL & SISTEMAS GENERATIVOS
+ * MUTTEVIDEO // PORTFOLIO EXPERIMENTAL & SISTEMAS GENERATIVOS
  * Archivo de Lógica Interactiva (script.js)
+ * Paleta: Turquesa, Violeta, Magenta, Amarillo, Blanco y Negro
  * ============================================================================
  */
 
@@ -34,12 +35,12 @@
     frameCount: 0
   };
 
-  // Paletas Cromáticas de Vanguardia
+  // Paletas Cromáticas de Vanguardia (Turquesa, Violeta, Magenta, Amarillo, Blanco y Negro)
   const PALETTES = {
-    cyber: ['#d4ff32', '#ff2a85', '#00f0ff', '#ffffff'],
-    spectral: ['#00f0ff', '#8e2de2', '#4facfe', '#00ffd5'],
-    organic: ['#00ffaa', '#ffaa00', '#70ff00', '#d4ff32'],
-    monochrome: ['#ffffff', '#cccccc', '#777777', '#333333']
+    cyber: ['#00f5d4', '#f72585', '#ffd600', '#8a2be2'],    // Turquesa, Magenta, Amarillo, Violeta
+    spectral: ['#00f5d4', '#8a2be2', '#ffffff', '#050508'], // Turquesa, Violeta, Blanco, Negro
+    aurora: ['#ffd600', '#f72585', '#00f5d4', '#ffffff'],   // Amarillo, Magenta, Turquesa, Blanco
+    monochrome: ['#ffffff', '#8a2be2', '#00f5d4', '#050508']// Blanco, Violeta, Turquesa, Negro
   };
 
   // Base de datos de proyectos para inspección
@@ -592,7 +593,7 @@
       const rect = heroArea.getBoundingClientRect();
       const clickX = e.clientX;
       const clickY = e.clientY;
-      triggerShockwave(clickX, clickY, '#d4ff32');
+      triggerShockwave(clickX, clickY, '#00f5d4');
       showToast('REVERBERACIÓN CUÁNTICA DISPARADA');
     });
   }
@@ -684,8 +685,8 @@
       const paletteNames = {
         cyber: 'CIBERNÉTICA',
         spectral: 'ESPECTRAL',
-        organic: 'BIO-LUMINISCENCIA',
-        monochrome: 'MONOCROMO'
+        aurora: 'SOLAR',
+        monochrome: 'CONTRASTE PURO'
       };
 
       if (valPalette) valPalette.textContent = paletteNames[paletteKey] || paletteKey.toUpperCase();
@@ -742,11 +743,11 @@
 
       // Marca de agua y metadatos
       sCtx.font = '14px "Space Mono", monospace';
-      sCtx.fillStyle = '#d4ff32';
-      sCtx.fillText(`ELENA VOSS // SISTEMAS GENERATIVOS // SEED: ${Math.floor(STATE.seed)} // MODO: ${STATE.mode.toUpperCase()}`, 30, snapCanvas.height - 30);
+      sCtx.fillStyle = '#00f5d4';
+      sCtx.fillText(`MUTTEVIDEO // SISTEMAS GENERATIVOS // SEED: ${Math.floor(STATE.seed)} // MODO: ${STATE.mode.toUpperCase()}`, 30, snapCanvas.height - 30);
 
       const link = document.createElement('a');
-      link.download = `elena-voss-generative-${Date.now()}.png`;
+      link.download = `muttevideo-generativo-${Date.now()}.png`;
       link.href = snapCanvas.toDataURL('image/png');
       link.click();
 
@@ -920,9 +921,9 @@
 
     // Mensaje de bienvenida en consola al estilo vanguardista
     console.log(
-      '%c [ELENA VOSS // ARTE MULTIMEDIAL & SISTEMAS GENERATIVOS] %c 2026 ',
-      'background: #d4ff32; color: #050608; font-weight: bold; padding: 4px;',
-      'background: #ff2a85; color: #fff; padding: 4px;'
+      '%c [MUTTEVIDEO // ARTE MULTIMEDIAL & SISTEMAS GENERATIVOS] %c 2026 ',
+      'background: #00f5d4; color: #050508; font-weight: bold; padding: 4px;',
+      'background: #f72585; color: #fff; padding: 4px;'
     );
   });
 
